@@ -3,7 +3,7 @@
 #include "sort.h"
 
 /**
- * islistsorted - checks if list is sorted recursively
+ * list_check - checks if list is sorted recursively
  * @array: array to be sorted
  * @size: size of array
  * Return: 1 is sorted else -1
@@ -23,6 +23,7 @@ int list_check(int *array, size_t size)
  * pass - Will iterate through the array and swap numbers
  * @array: array to be sorted
  * @size: size of array
+ * @index: needed for print array
  * Return: Nothing
  */
 int pass(int *array, size_t size, int index)
@@ -31,8 +32,7 @@ int pass(int *array, size_t size, int index)
 
 	if (size == 1)
 		return (1);
-	else
-		pass(array, size - 1, index);
+	pass(array, size - 1, index);
 
 	if (array[size - 1] < array[size - 2])
 	{
