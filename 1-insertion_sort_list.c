@@ -41,6 +41,8 @@ void insertion_sort_list(listint_t **list)
 				}
 				index->prev = next_num;
 				print_list(*list);
+				if (index->prev->prev == NULL)
+					break;
 				index = next_num->prev;
 			}
 		}
