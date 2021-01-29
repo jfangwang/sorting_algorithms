@@ -21,6 +21,7 @@ void print_list(const listint_t *list);
 int pass(int *array, size_t size, int index);
 
 void bubble_sort(int *array, size_t size);
+void insertion_sort_list(listint_t **list);
 
 size_t dlistint_len(const listint_t *h);
 listint_t *add_dnodeint(listint_t **head, const int n);

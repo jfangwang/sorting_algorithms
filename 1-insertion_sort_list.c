@@ -11,30 +11,49 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *next_num;
 	listint_t *current;
-	listint_t *sort;
-	listint_t *temp;
+	listint_t *index;
 
 	current = *list;
-	if (current == NULL)
+	if (current == NULL || current->next == NULL)
 		return;
 
 	while (current->next != NULL)
 	{
 		/* curr at i[0] */
 		next_num = current->next;
+		index = current;
 
-		if (next_num < current)
+		if (next_num->n < index->n)
 		{
-			/*takes next num and sorts it*/
-			sort = next_num->prev
-			if (next_num < current)
-				sort = sort->prev;
-			else
+			while (next_num->n < index->n && index != NULL)
 			{
-				temp = sort;
-				sort = next_num;
-				num 
+				/*Swaps*/
+				if (next_num->next != NULL)
+				{
+					index->next = next_num->next;
+					index->next->prev = index;
+				}
+				else
+					index->next = NULL;
+				next_num->next = index;
+				if (index->prev != NULL)
+				{
+					next_num->prev = index->prev;
+					next_num->prev->next = next_num;
+				}
+				else
+				{
+					next_num->prev = NULL;
+					*list = next_num;
+				}
+				index->prev = next_num;
+				print_list(*list);
+				if (index->prev->prev == NULL)
+					break;
+				index = next_num->prev;
 			}
 		}
+		else
+			current = current->next;
 	}
 }
