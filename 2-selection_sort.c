@@ -10,19 +10,21 @@
  */
 void selection_sort(int *array, size_t size)
 {
-	unsigned int index, pos, min;
-	int hold;
+	unsigned int s_idx, u_idx, min_idx;
+	int hold_val;
 
-	for (pos = 0; pos < size; pos++)
+	for (s_idx = 0; s_idx < size; s_idx++)
 	{
-		min = pos;
-		for (index = pos; index < size; index++)
-			if (array[index] < array[min])
-				min = index;
-		hold = array[min];
-		for (index = min; index > pos; index--)
-			array[index] = array[index - 1];
-		array[pos] = hold;
-		print_array(array, size);
+		for (u_idx = s_idx, min_idx = u_idx; u_idx < size; u_idx++)
+			if (array[u_idx] < array[min_idx])
+				min_idx = u_idx;
+		u_idx = s_idx;
+		if (array[u_idx] != array[min_idx])
+		{
+			hold_val = array[u_idx];
+			array[u_idx] = array[min_idx];
+			array[min_idx] = hold_val;
+			print_array(array, size);
+		}
 	}
 }
