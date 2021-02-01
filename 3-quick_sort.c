@@ -3,10 +3,11 @@
 #include "sort.h"
 
 /**
- * selection_sort - selection sort of array
+ * partition - selection sort of array
  * @array: array to be sorted
  * @lo: beginning of array
  * @hi: end of array
+ * @size: size
  * Return: Nothing
  */
 
@@ -33,10 +34,11 @@ int partition(int *array, int lo, int hi, size_t size)
 }
 
 /**
- * selection_sort - selection sort of array
+ * quick_helper - selection sort of array
  * @array: array to be sorted
  * @lo: beginning of array
  * @hi: end of array
+ * @size: size
  * Return: Nothing
  */
 

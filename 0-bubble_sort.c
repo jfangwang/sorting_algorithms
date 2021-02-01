@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "sort.h"
 
 /**
@@ -30,7 +28,7 @@ int pass(int *array, size_t size, int index)
 {
 	unsigned int temp;
 
-	if (size == 1)
+	if (size == 1 || array == NULL)
 		return (1);
 	pass(array, size - 1, index);
 
