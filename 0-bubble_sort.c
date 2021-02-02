@@ -8,10 +8,8 @@
  */
 int list_check(int *array, size_t size)
 {
-	if (size == 1)
-	{
+	if (size == 0)
 		return (1);
-	}
 	if (array[size - 1] < array[size - 2])
 		return (-1);
 	return (list_check(array, size - 1));
