@@ -7,6 +7,7 @@
  * @array: array to be sorted
  * @start: start of array
  * @end: end of array
+ * @size: size of array
  * Return: Nothing
  */
 void siftDown(int *array, int start, int end, size_t size)
@@ -24,14 +25,11 @@ void siftDown(int *array, int start, int end, size_t size)
 			swap_hold = child + 1;
 		if (swap_hold == root)
 			return;
-		else
-		{
-			val_hold = array[root];
-			array[root] = array[swap_hold];
-			array[swap_hold] = val_hold;
-			root = swap_hold;
-			print_array(array, size);
-		}
+		val_hold = array[root];
+		array[root] = array[swap_hold];
+		array[swap_hold] = val_hold;
+		root = swap_hold;
+		print_array(array, size);
 	}
 }
 
@@ -68,7 +66,7 @@ void heap_sort(int *array, size_t size)
 	while (end > 0)
 	{
 		if (array[0] != array[end])
-		{	
+		{
 			hold = array[end];
 			array[end] = array[0];
 			array[0] = hold;
