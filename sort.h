@@ -29,7 +29,7 @@ void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 
 void heap_sort(int *array, size_t size);
-
+void shell_sort(int *array, size_t size);
 size_t dlistint_len(const listint_t *h);
 listint_t *add_dnodeint(listint_t **head, const int n);
 listint_t *add_dnodeint_end(listint_t **head, const int n);
